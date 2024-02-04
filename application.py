@@ -1,4 +1,5 @@
 import logging
+import sys
 import boto3
 import openai
 from flask import Flask, request, jsonify
@@ -7,8 +8,8 @@ import os
 
 app = Flask(__name__)
 
-# Set up basic logging to a file
-logging.basicConfig(filename='/var/log/flask/error.log', level=logging.INFO)
+# Configure logging to write to stdout
+logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
 # Set the upload folder in the config
 app.config['UPLOAD_FOLDER'] = '/tmp/uploads/images'  # Use /tmp for temporary storage
