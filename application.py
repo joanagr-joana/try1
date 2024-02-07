@@ -10,7 +10,6 @@ app = Flask(__name__)
 
 # Configure logging to write to stdout
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
-
 # Create a custom logger
 logger = logging.getLogger(__name__)
 # Create handlers
@@ -90,7 +89,7 @@ def upload_image():
         ]
 
         # Send the request to OpenAI
-        response = openai.ChatCompletion.create(
+        response = openai.chat.completions.create(
             model=MODEL,
             messages=messages,
             max_tokens=550
