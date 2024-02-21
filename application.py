@@ -14,7 +14,7 @@ logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logger = logging.getLogger(__name__)
 # Create handlers
 c_handler = logging.StreamHandler()
-f_handler = logging.FileHandler('/var/log/error.log')
+f_handler = logging.FileHandler('/var/app/venv/staging-LQM1lest/error.log')
 # Create formatters and add them to handlers
 c_format = logging.Formatter('%(name)s - %(levelname)s - %(message)s')
 f_format = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
